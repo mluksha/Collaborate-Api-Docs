@@ -507,7 +507,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1904</td><td>User has no permission to access chat in specified session.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1304,7 +1304,7 @@
           "ContentForm"
         ],
         "summary": "Request for attaching a particular form to the session.",
-        "description": "Sample response:\r\n            \r\n    {\r\n       \"contentFormId\": 123\r\n    }",
+        "description": "Sample response:\r\n            \r\n    {\r\n       \"ContentFormId\": 123\r\n    }",
         "parameters": [
           {
             "name": "Authorization",
@@ -1809,7 +1809,7 @@
           "Contents"
         ],
         "summary": "Switch session Owner",
-        "description": "Sample request:\r\n            \r\n    POST \r\n    {\r\n       \"contentId\": 123,\r\n       \"newOwnerId\": 321\r\n    }",
+        "description": "Sample request:\r\n            \r\n    POST \r\n    {\r\n       \"ContentId\": 123,\r\n       \"NewOwnerId\": 321\r\n    }",
         "parameters": [
           {
             "name": "Authorization",
@@ -2092,7 +2092,7 @@
           "Forms"
         ],
         "summary": "Request creates a new form.",
-        "description": "Sample request (simple form with 3 questions):\r\n\r\n    {\r\n        \"name\": \"Metal form\",\r\n        \"controls\": [\r\n                        {\r\n                            \"controlType\": 1 (Text),\r\n                            \"label\": \"Type the name of your favourite band\",\r\n                            \"order\": 0\r\n                        },\r\n                        \r\n                        {\r\n                            \"controlType\": 3 (Checkboxlist),\r\n                            \"label\": \"Select the bands you prefer most\",\r\n                            \"order\": 1,\r\n                            \"options\": [\r\n                                            {\r\n                                                \"value\": \"Metallica\",\r\n                                                \"order\": 0\r\n                                            },\r\n                                            {\r\n                                                \"value\": \"Manowar\",\r\n                                                \"order\": 1\r\n                                            },\r\n                                            {\r\n                                                \"value\": \"Tool\",\r\n                                                \"order\": 2\r\n                                            },\r\n                                            {\r\n                                                \"value\": \"Rammstein\",\r\n                                                \"order\": 3\r\n                                            }\r\n                                       ]\r\n                        },\r\n                        \r\n                        {\r\n                            \"controlType\": 4 (Radiobuttonlist),\r\n                            \"label\": \"Have you ever attended your favourite band show?\",\r\n                            \"order\": 2,\r\n                            \"options\": [\r\n                                            {\r\n                                                \"value\": \"Yes\",\r\n                                                \"order\": 0\r\n                                            },\r\n                                            {\r\n                                                \"value\": \"No\",\r\n                                                \"order\": 1\r\n                                            }\r\n                                       ]\r\n                        }\r\n                    ]\r\n    }\r\n\r\nSample response:\r\n            \r\n    {\r\n       \"FormId\": 123\r\n    }",
+        "description": "Sample request (simple form with 3 questions):\r\n\r\n    {\r\n        \"Name\": \"Metal form\",\r\n        \"Controls\": [\r\n                        {\r\n                            \"ControlType\": 1 (Text),\r\n                            \"Label\": \"Type the name of your favourite band\",\r\n                            \"Order\": 0\r\n                        },\r\n                        \r\n                        {\r\n                            \"ControlType\": 3 (Checkboxlist),\r\n                            \"Label\": \"Select the bands you prefer most\",\r\n                            \"Order\": 1,\r\n                            \"Options\": [\r\n                                            {\r\n                                                \"Value\": \"Metallica\",\r\n                                                \"Order\": 0\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"Manowar\",\r\n                                                \"Order\": 1\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"Tool\",\r\n                                                \"Order\": 2\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"Rammstein\",\r\n                                                \"Order\": 3\r\n                                            }\r\n                                       ]\r\n                        },\r\n                        \r\n                        {\r\n                            \"ControlType\": 4 (Radiobuttonlist),\r\n                            \"Label\": \"Have you ever attended your favourite band show?\",\r\n                            \"Order\": 2,\r\n                            \"Options\": [\r\n                                            {\r\n                                                \"Value\": \"Yes\",\r\n                                                \"Order\": 0\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"No\",\r\n                                                \"Order\": 1\r\n                                            }\r\n                                       ]\r\n                        }\r\n                    ]\r\n    }\r\n\r\nSample response:\r\n            \r\n    {\r\n       \"FormId\": 123\r\n    }",
         "parameters": [
           {
             "name": "Authorization",
@@ -6202,6 +6202,7 @@
           },
           "EmployeeId": {
             "maxLength": 128,
+            "pattern": "^[a-zA-Z0-9_-]+$",
             "type": "string",
             "nullable": true
           },
@@ -8014,21 +8015,22 @@
         },
         "additionalProperties": false
       },
-      "TimePeriod": {
+      "GetReportTimePeriod": {
         "type": "object",
         "properties": {
           "StartDate": {
             "type": "string",
-            "description": "Start date",
+            "description": "Start date\r\n<br>Default value: 15 minutes before the current time.",
             "format": "date-time"
           },
           "EndDate": {
             "type": "string",
-            "description": "End date",
+            "description": "End date\r\n<br>Default value: current time.",
             "format": "date-time"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Time period for which the report is generated\r\n<br>If missing, then data for the latest 15 minutes is returned."
       },
       "GetSessionReportModel": {
         "type": "object",
@@ -8046,7 +8048,7 @@
             "nullable": true
           },
           "ExportPeriod": {
-            "$ref": "#/components/schemas/TimePeriod"
+            "$ref": "#/components/schemas/GetReportTimePeriod"
           }
         },
         "additionalProperties": false
@@ -8166,12 +8168,12 @@
           },
           "FormAnswerStatus": {
             "enum": [
-              "0: Pending",
-              "1: Pass",
-              "2: Fail",
+              "0: Submitted",
+              "1: Approved",
+              "2: Rejected",
               "3: Empty",
-              "4: ApprovedByAI",
-              "5: RejectedByAI"
+              "4: Approved by AI",
+              "5: Rejected by AI"
             ],
             "type": "integer",
             "description": "Current status of a particular form answer",
@@ -8218,7 +8220,7 @@
             "nullable": true
           },
           "ExportPeriod": {
-            "$ref": "#/components/schemas/TimePeriod"
+            "$ref": "#/components/schemas/GetReportTimePeriod"
           }
         },
         "additionalProperties": false
