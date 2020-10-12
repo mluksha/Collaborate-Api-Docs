@@ -13,6 +13,15 @@
         "summary": "Find all users in the system matching the supplied search query.",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token (Allowed roles: SystemAdmin, TenantAdmin, TenantBillingAdmin)",
@@ -216,6 +225,15 @@
         "summary": "Create new admin or user without password.",
         "description": "Sample response:\r\n            \r\n    {\r\n       \"UserId\": 123\r\n    }",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -426,6 +444,15 @@
             }
           },
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -576,6 +603,15 @@
             }
           },
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -705,6 +741,15 @@
         ],
         "summary": "Request is used to send new message in session",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -883,6 +928,15 @@
         "summary": "Request is used to get a list of supported languages for translation",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -981,6 +1035,15 @@
         ],
         "summary": "Request is used to translate message to selected language",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -1150,6 +1213,15 @@
             }
           },
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -1306,6 +1378,15 @@
         "summary": "Request for attaching a particular form to the session.",
         "description": "Sample response:\r\n            \r\n    {\r\n       \"ContentFormId\": 123\r\n    }",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -1482,6 +1563,15 @@
         "description": "Sample response (4 forms attached):\r\n            \r\n    {\r\n       \"ContentFormsIds\": [123, 456, 876, 345]\r\n    }",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -1657,6 +1747,15 @@
         "description": "Sample request with session naming convention:\r\n            \r\n    POST api/contents/createcontent\r\n    {\r\n       \"Description\": \"USA_Arizona_Phoenix_123\",\r\n       \"ContentNameParts\": \r\n        [\r\n            {\r\n                \"Order\": 0,\r\n                \"Question\": \"Country\",\r\n                \"Answer\": \"USA\"\r\n            },\r\n            {\r\n                \"Order\": 1,\r\n                \"Question\": \"State\",\r\n                \"Answer\": \"Arizona\"\r\n            },\r\n            {\r\n                \"Order\": 2,\r\n                \"Question\": \"City\",\r\n                \"Answer\": \"Phoenix\"\r\n            },\r\n            {\r\n                \"Order\": 3,\r\n                \"Question\": \"SomeId\",\r\n                \"Answer\": 123\r\n            }\r\n        ]\r\n    }\r\n    \r\nSample request without session naming convention:\r\n            \r\n    POST api/contents/createcontent\r\n    {\r\n       \"Description\": null (or any string value)\r\n    }\r\n    \r\nSample response:\r\n            \r\n    {\r\n       \"СontentId\": 123\r\n    }",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -1811,6 +1910,15 @@
         "summary": "Switch session Owner",
         "description": "Sample request:\r\n            \r\n    POST \r\n    {\r\n       \"ContentId\": 123,\r\n       \"NewOwnerId\": 321\r\n    }",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -1989,6 +2097,15 @@
         "summary": "Request returns a list of forms available for current user. \r\nForm is available if it's created by current user or if it's published by admin of current user tenant.",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -2094,6 +2211,15 @@
         "summary": "Request creates a new form.",
         "description": "Sample request (simple form with 3 questions):\r\n\r\n    {\r\n        \"Name\": \"Metal form\",\r\n        \"Controls\": [\r\n                        {\r\n                            \"ControlType\": 1 (Text),\r\n                            \"Label\": \"Type the name of your favourite band\",\r\n                            \"Order\": 0\r\n                        },\r\n                        \r\n                        {\r\n                            \"ControlType\": 3 (Checkboxlist),\r\n                            \"Label\": \"Select the bands you prefer most\",\r\n                            \"Order\": 1,\r\n                            \"Options\": [\r\n                                            {\r\n                                                \"Value\": \"Metallica\",\r\n                                                \"Order\": 0\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"Manowar\",\r\n                                                \"Order\": 1\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"Tool\",\r\n                                                \"Order\": 2\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"Rammstein\",\r\n                                                \"Order\": 3\r\n                                            }\r\n                                       ]\r\n                        },\r\n                        \r\n                        {\r\n                            \"ControlType\": 4 (Radiobuttonlist),\r\n                            \"Label\": \"Have you ever attended your favourite band show?\",\r\n                            \"Order\": 2,\r\n                            \"Options\": [\r\n                                            {\r\n                                                \"Value\": \"Yes\",\r\n                                                \"Order\": 0\r\n                                            },\r\n                                            {\r\n                                                \"Value\": \"No\",\r\n                                                \"Order\": 1\r\n                                            }\r\n                                       ]\r\n                        }\r\n                    ]\r\n    }\r\n\r\nSample response:\r\n            \r\n    {\r\n       \"FormId\": 123\r\n    }",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -2249,6 +2375,15 @@
         "summary": "Request is used to add drawing board to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -2345,7 +2480,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2406,6 +2541,15 @@
         "summary": "Request is used to add image to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -2502,7 +2646,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2563,6 +2707,15 @@
         "summary": "Request is used to add video to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -2659,7 +2812,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2720,6 +2873,15 @@
         "summary": "Request is used to add Word document to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -2816,7 +2978,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2877,6 +3039,15 @@
         "summary": "Request is used to add PowerPoint document to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -2973,7 +3144,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3034,6 +3205,15 @@
         "summary": "Request is used to add Excel document to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -3130,7 +3310,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3191,6 +3371,15 @@
         "summary": "Request is used to add Web page to session",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -3287,7 +3476,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3347,6 +3536,15 @@
         ],
         "summary": "Request is used to add pdf to session",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -3453,7 +3651,7 @@
             }
           },
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1803</td><td>User has no permission to create page during video call.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3522,6 +3720,15 @@
               "type": "integer",
               "description": "Unique id of the page within the system",
               "format": "int32"
+            }
+          },
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -3644,6 +3851,15 @@
               "type": "integer",
               "description": "Unique id of the page within the system",
               "format": "int32"
+            }
+          },
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -3776,6 +3992,15 @@
         ],
         "summary": "Request is used to rename existing page",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -3934,6 +4159,15 @@
         "summary": "Request is used to move existing pages to folder",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -4090,6 +4324,15 @@
         ],
         "summary": "Request is used to receive a form answers report for specified time period",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -4277,6 +4520,15 @@
         "summary": "Request is used to receive a activity report for specified time period",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token (Allowed roles: SystemAdmin, TenantBillingAdmin, SessionAdmin, TenantAdmin)",
@@ -4462,6 +4714,15 @@
         ],
         "summary": "Request is used to receive a session report for specified time period",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -4660,6 +4921,15 @@
             }
           },
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -4799,6 +5069,15 @@
             }
           },
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -4920,6 +5199,15 @@
               "type": "integer",
               "description": "Unique id of the session within the system",
               "format": "int32"
+            }
+          },
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -5061,6 +5349,15 @@
         ],
         "summary": "Request is used to create new session folder",
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -5219,6 +5516,15 @@
         "summary": "Request is used to rename existing session folder",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -5357,6 +5663,17 @@
           "Token"
         ],
         "summary": "Request is used to receive an authorization token and login to the system.",
+        "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -5374,7 +5691,7 @@
                   },
                   "UserName": {
                     "type": "string",
-                    "description": "Email/username of the user who wants to authorize to the system"
+                    "description": "Email of the user who wants to authorize to the system"
                   },
                   "Subdomain": {
                     "type": "string",
@@ -5506,6 +5823,17 @@
           "Token"
         ],
         "summary": "Request is used to receive an authorization token and login to the system.",
+        "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -5659,6 +5987,15 @@
         "description": "<br>Max file size: 2GB.\r\n<br>Request timeout: 10 minutes.",
         "parameters": [
           {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "Access token",
@@ -5809,6 +6146,15 @@
           "UserRoles"
         ],
         "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -7630,7 +7976,7 @@
             "nullable": true
           },
           "Owner": {
-            "$ref": "#/components/schemas/UserInfoModel"
+            "$ref": "#/components/schemas/BaseUserInfoModel"
           },
           "DocumentId": {
             "type": "integer",
