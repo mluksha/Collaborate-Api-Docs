@@ -2089,6 +2089,173 @@
         ]
       }
     },
+    "/api/contents/removeUser": {
+      "post": {
+        "tags": [
+          "Contents"
+        ],
+        "summary": "Remove user from session",
+        "description": "Sample request:\r\n            \r\n    POST \r\n    {\r\n       \"contentId\": 123,\r\n       \"userId\": 321\r\n    }",
+        "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer {access token}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveUserContentModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveUserContentModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveUserContentModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveUserContentModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1005</td><td>Unauthorized.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1004</td><td>An unhandled error occurred.</td></tr><tr><td>1006</td><td>A timeout error occurred.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1007</td><td>Method not allowed</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "User was successfully removed from session"
+          },
+          "404": {
+            "description": "Not Found<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1100</td><td>User not found.</td></tr><tr><td>1450</td><td>Content not found</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type <table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1008</td><td>Unsupported media type</td></tr></table>"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
     "/api/forms": {
       "get": {
         "tags": [
@@ -3529,6 +3696,172 @@
         ]
       }
     },
+    "/api/pages/360view": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Request is used to add 360 view page to session",
+        "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer {access token}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpatialViewPageCreateModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpatialViewPageCreateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpatialViewPageCreateModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpatialViewPageCreateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "405": {
+            "description": "Method Not Allowed<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1007</td><td>Method not allowed</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1004</td><td>An unhandled error occurred.</td></tr><tr><td>1006</td><td>A timeout error occurred.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1452</td><td>Content not active.</td></tr><tr><td>1807</td><td>360 view was disabled by tenant.</td></tr><tr><td>1808</td><td>Page has invalid or unsupported content type.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1450</td><td>Content not found</td></tr><tr><td>1750</td><td>Folder not found.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized <table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1005</td><td>Unauthorized.</td></tr></table>"
+          },
+          "415": {
+            "description": "Unsupported Media Type <table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1008</td><td>Unsupported media type</td></tr></table>"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
     "/api/pages/pdf": {
       "post": {
         "tags": [
@@ -4317,6 +4650,201 @@
         ]
       }
     },
+    "/api/reports/answers/bycontent": {
+      "post": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Request is used to receive a form answers report for specified session",
+        "parameters": [
+          {
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header",
+            "description": "Subscription key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token (Allowed roles: SystemAdmin, TenantBillingAdmin, SessionAdmin, TenantAdmin)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer {access token}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionReportGetModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionReportGetModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionReportGetModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionReportGetModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1450</td><td>Content not found</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1008</td><td>Unsupported media type</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1004</td><td>An unhandled error occurred.</td></tr><tr><td>1006</td><td>A timeout error occurred.</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1007</td><td>Method not allowed</td></tr></table>",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FormAnswerDataModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FormAnswerDataModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FormAnswerDataModel"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized <table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1005</td><td>Unauthorized.</td></tr></table>"
+          },
+          "403": {
+            "description": "Forbidden <table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1002</td><td>Access not allowed</td></tr></table>"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
     "/api/reports/answers": {
       "post": {
         "tags": [
@@ -4348,22 +4876,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetSessionReportModel"
+                "$ref": "#/components/schemas/GetReportModel"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetSessionReportModel"
+                "$ref": "#/components/schemas/GetReportModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetSessionReportModel"
+                "$ref": "#/components/schemas/GetReportModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetSessionReportModel"
+                "$ref": "#/components/schemas/GetReportModel"
               }
             }
           }
@@ -6980,6 +7508,26 @@
         },
         "additionalProperties": false
       },
+      "RemoveUserContentModel": {
+        "required": [
+          "ContentId",
+          "UserId"
+        ],
+        "type": "object",
+        "properties": {
+          "ContentId": {
+            "type": "integer",
+            "description": "The id of particular session.",
+            "format": "int32"
+          },
+          "UserId": {
+            "type": "integer",
+            "description": "The id of the user to be removed from the session.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "FormViewUserModel": {
         "type": "object",
         "properties": {
@@ -7412,6 +7960,44 @@
         },
         "additionalProperties": false
       },
+      "FormActionModel": {
+        "required": [
+          "ApiUrl",
+          "Label",
+          "Order"
+        ],
+        "type": "object",
+        "properties": {
+          "ApiUrl": {
+            "maxLength": 4000,
+            "type": "string",
+            "description": "An API Url."
+          },
+          "ApiKey": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "An API key (optional).",
+            "nullable": true
+          },
+          "Label": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "An action name."
+          },
+          "Order": {
+            "type": "integer",
+            "description": "An order of the current action in the form.",
+            "format": "int32"
+          },
+          "Tooltip": {
+            "maxLength": 512,
+            "type": "string",
+            "description": "An informational text displayed when hovering over the action.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateFormModel": {
         "required": [
           "Name"
@@ -7451,6 +8037,14 @@
               "$ref": "#/components/schemas/FormCounterModel"
             },
             "description": "A list of AI counters. Required if Controls list is empty.",
+            "nullable": true
+          },
+          "Actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FormActionModel"
+            },
+            "description": "A list of form actions. Required if Controls list is empty.",
             "nullable": true
           },
           "FormViewMode": {
@@ -7537,6 +8131,26 @@
         },
         "additionalProperties": false
       },
+      "MetadataModel": {
+        "type": "object",
+        "properties": {
+          "FieldOfView": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "Altitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "AssetModel": {
         "type": "object",
         "properties": {
@@ -7582,6 +8196,9 @@
               "$ref": "#/components/schemas/CompressedMediaUrlModel"
             },
             "nullable": true
+          },
+          "Metadata": {
+            "$ref": "#/components/schemas/MetadataModel"
           },
           "PageId": {
             "type": "integer",
@@ -8283,6 +8900,46 @@
         },
         "additionalProperties": false
       },
+      "SpatialViewPageCreateModel": {
+        "required": [
+          "ContentId",
+          "PageIds"
+        ],
+        "type": "object",
+        "properties": {
+          "PageIds": {
+            "minLength": 1,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "List of pages ids, from which 360 view will be created"
+          },
+          "ContentId": {
+            "type": "integer",
+            "description": "Unique id of the session within the system",
+            "format": "int32"
+          },
+          "Name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "Name of page",
+            "nullable": true
+          },
+          "FolderId": {
+            "type": "integer",
+            "description": "Unique id of the session folder within the system",
+            "format": "int32",
+            "nullable": true
+          },
+          "TimeZoneOffset": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreatePdfPageModel": {
         "required": [
           "ContentId",
@@ -8361,40 +9018,41 @@
         },
         "additionalProperties": false
       },
-      "GetReportTimePeriod": {
+      "TimePeriod": {
         "type": "object",
         "properties": {
           "StartDate": {
             "type": "string",
-            "description": "Start date\r\n<br>Default value: 15 minutes before the current time.",
+            "description": "Start date",
             "format": "date-time"
           },
           "EndDate": {
             "type": "string",
-            "description": "End date\r\n<br>Default value: current time.",
+            "description": "End date",
             "format": "date-time"
           }
         },
         "additionalProperties": false,
-        "description": "Time period for which the report is generated\r\n<br>If missing, then data for the latest 15 minutes is returned."
+        "description": "Time period for which the report is generated\r\n<br>If missing, then data for all time is returned."
       },
-      "GetSessionReportModel": {
+      "SessionReportGetModel": {
+        "required": [
+          "ContentId"
+        ],
         "type": "object",
         "properties": {
           "ContentId": {
             "type": "integer",
-            "description": "Unique id of the session within the system\r\n<br>If missing, then data for all tenant sessions is returned.",
-            "format": "int32",
-            "nullable": true
+            "description": "Unique id of the session within the system",
+            "format": "int32"
           },
-          "TenantId": {
-            "type": "integer",
-            "description": "Id of the tenant for which report is generated\r\n<br>If missing, then data for users tenant is returned.",
-            "format": "int32",
-            "nullable": true
+          "Latest": {
+            "type": "boolean",
+            "description": "Parameter for defining whether only the latest answers or the whole history of answers will be returned",
+            "default": true
           },
           "ExportPeriod": {
-            "$ref": "#/components/schemas/GetReportTimePeriod"
+            "$ref": "#/components/schemas/TimePeriod"
           }
         },
         "additionalProperties": false
@@ -8519,7 +9177,9 @@
               "2: Rejected",
               "3: Empty",
               "4: Approved by AI",
-              "5: Rejected by AI"
+              "5: Rejected by AI",
+              "6: Approved by Reviewer",
+              "7: Rejected by Reviewer"
             ],
             "type": "integer",
             "description": "Current status of a particular form answer",
@@ -8555,6 +9215,23 @@
           }
         },
         "additionalProperties": false
+      },
+      "GetReportTimePeriod": {
+        "type": "object",
+        "properties": {
+          "StartDate": {
+            "type": "string",
+            "description": "Start date\r\n<br>Default value: 15 minutes before the current time.",
+            "format": "date-time"
+          },
+          "EndDate": {
+            "type": "string",
+            "description": "End date\r\n<br>Default value: current time.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Time period for which the report is generated\r\n<br>If missing, then data for the latest 15 minutes is returned."
       },
       "GetReportModel": {
         "type": "object",
@@ -8611,7 +9288,14 @@
               "17: SessionShared",
               "18: SessionRevoked",
               "19: SessionCopied",
-              "20: FormStatusUpdatedByAI"
+              "20: FormStatusUpdatedByAI",
+              "21: SessionSentForReview",
+              "22: SessionReadyForReview",
+              "23: SessionFeedbackSent",
+              "24: SessionReviewCompleted",
+              "25: CheckIn",
+              "26: CheckOut",
+              "27: Confirm"
             ],
             "type": "integer",
             "description": "Specific action which is performed by the user",
@@ -8621,6 +9305,20 @@
             "type": "string",
             "description": "Exact day and time (in UTC) when action was performed",
             "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionNamingConventionAnswerModel": {
+        "type": "object",
+        "properties": {
+          "Question": {
+            "type": "string",
+            "nullable": true
+          },
+          "Answer": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -8726,11 +9424,11 @@
             "format": "int32"
           },
           "NameDetails": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNamingConventionAnswerModel"
             },
-            "description": "Json which represents SessionTitle created via Session Naming Convention and is comprised of {\"FormQuestion\":\"FormAnswer\"}",
+            "description": "Json which represents SessionTitle created via Session Naming Convention and is comprised of [{\"Question\":\"First question\",\"Answer: \"First answer\"}]",
             "nullable": true
           }
         },
