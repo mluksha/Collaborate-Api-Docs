@@ -2143,7 +2143,7 @@
         },
         "responses": {
           "400": {
-            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr></table>",
+            "description": "Bad Request<br/><table border=\"1\"><caption>Error code and message returned in JSON</caption><tr><th>Code</th><th>Message</th></tr><tr><td>1001</td><td>Invalid request parameters.</td></tr><tr><td>1756</td><td>Session owner cannot be removed from the session</td></tr></table>",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8170,12 +8170,12 @@
               "6: RecordedVideo",
               "7: Thumbnail",
               "10: Snapshot",
-              "11: ConcatenatedVideo",
               "12: WebPage",
               "13: SpatialModelImage",
               "14: DocDocument",
               "15: PptDocument",
               "16: ExcelDocument",
+              "11: ConcatenatedVideo",
               "101: UnencodedVideo",
               "102: UnencodedRecordedVideo",
               "103: UnencodedConcatenatedVideo",
